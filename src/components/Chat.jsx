@@ -1,11 +1,20 @@
 import { useState } from "react"
 import { messages as mockMessages } from "../services/api"
 
-const Chat = ()=>{
+const Chat = ({contact})=>{
 
     const [textMessage, setTexMessage] = useState("")
-
     const [messages, setMessage] = useState(mockMessages)
+
+    if(!contact){
+        return(
+            <section className="container-initial-chat">
+                <header className="header-chat-panel">
+                <h2>Seleciona un chat</h2>
+            </header>
+            </section>
+        )
+    }
 
     const handleOnChange = (e)=>{
         setTexMessage(e.target.value)
@@ -38,8 +47,8 @@ const Chat = ()=>{
     return(
         <section className="container-chat">
             <header className="header-chat-panel">
-                <h2>Lucas Hernan Figueroa</h2>
-                <p>ultima conexion: hace 1 minuto</p>
+                <h2>{`${contact.firstName} ${contact.lastName}`}</h2>
+                <p>{`${contact.phone}`} hace 1 minuto</p>
             </header>
             <div className="chat-body">
                 <p className="dayMesagge">Hoy</p>
