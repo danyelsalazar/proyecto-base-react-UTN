@@ -33,7 +33,12 @@ const Aside= ({selectContact})=>{
         
     }
 
-    const filterContacts = contactos.filter((contacto)=> contacto.firstName.toLowerCase().includes(search.toLowerCase()) || contacto.lastName.toLowerCase().includes(search.toLowerCase()))
+    const filterContacts = contactos.filter((contacto)=> {
+        const fullname = `${contacto.firstName} ${contacto.lastName}`
+
+        return(
+        contacto.firstName.toLowerCase().includes(search.toLowerCase()) || contacto.lastName.toLowerCase().includes(search.toLowerCase()) || fullname.toLocaleLowerCase().includes(search.toLocaleLowerCase()))
+    })
     // console.log(filterUsers);
     
 

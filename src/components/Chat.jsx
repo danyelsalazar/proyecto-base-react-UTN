@@ -1,10 +1,15 @@
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { messages as mockMessages } from "../services/api"
 
 const Chat = ({contact})=>{
 
     const [textMessage, setTexMessage] = useState("")
     const [messages, setMessage] = useState(mockMessages)
+    const messagesEndRef = useRef(null)
+
+     useEffect(()=>{
+        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+    },[messages])
 
     if(!contact){
         return(
@@ -44,6 +49,7 @@ const Chat = ({contact})=>{
         }
         
     }
+
     return(
         <section className="container-chat">
             <header className="header-chat-panel">
@@ -59,6 +65,7 @@ const Chat = ({contact})=>{
                     </div>
                     ))
                 }
+                <div ref={messagesEndRef}></div>
             </div>
                 <div className="sendMessage">
                     <textarea onChange={handleOnChange} value={textMessage} onKeyDown={handleKey} placeholder="Mensaje"></textarea>
