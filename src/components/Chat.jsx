@@ -6,7 +6,7 @@ const Chat = ()=>{
     const [textMessage, setTexMessage] = useState("")
     const messagesEndRef = useRef(null)
 
-    const {users, selectUser, messagesUser, setMessagesUser} = useContext(ChatContext)
+    const {users, selectUser, messagesUser, setMessagesUser, setSelectUser, setUsers} = useContext(ChatContext)
 
      useEffect(()=>{
         messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
@@ -39,11 +39,24 @@ const Chat = ()=>{
         }
 
         // console.log(newMessage);
+
+        const newMessages = [...messagesUser, newMessage]
         
-        setMessagesUser([...messagesUser, newMessage])
+        setMessagesUser(newMessages)
         // console.log(messagesUser);
+        actualizaruserInUsers(selectUser.id, newMessages)
+        
+        // console.log(users);
 
         setTexMessage("")
+    }
+
+    const actualizaruserInUsers = (id, newMessages)=>{
+        setUsers((prevUsers)=>
+            prevUsers.map((user)=> 
+                user.id === id ? {...user, messages:  newMessages} : user
+            )
+        )
     }
 
     const handleKey = (e)=>{
@@ -52,6 +65,7 @@ const Chat = ()=>{
         }
         
     }
+
 
     return(
         <section className="container-chat">
