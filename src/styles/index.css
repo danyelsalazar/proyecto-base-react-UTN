@@ -99,10 +99,13 @@ small{
     justify-content: center;
     align-items: center;
 }
+.message-preview-chat{
+    color: rgb(148, 148, 148);
+}
 
 .container-chat{
     display: grid;
-    grid-template-rows: 80px 1fr 60px;
+    grid-template-rows: max-content 1fr 60px;
 }
 .header-chat-panel{
     padding: 10px;
@@ -111,8 +114,11 @@ small{
     gap: 10px;
     border-bottom: .4px solid rgb(79, 79, 79);
 }
+.header-chat-panel-preview{
+    border-bottom: none;
+}
 .header-chat-panel p{
-    color: rgb(148, 148, 148);;
+    color: rgb(148, 148, 148);
 }
 .chat-body{
     display: flex;

@@ -1,21 +1,22 @@
-import { useState, useRef, useEffect } from "react"
-import { messages as mockMessages } from "../services/api"
+import { useState, useRef, useEffect, useContext } from "react"
+import { ChatContext } from "../context/chatContext"
 
-const Chat = ({contact})=>{
+const Chat = ()=>{
 
     const [textMessage, setTexMessage] = useState("")
-    const [messages, setMessage] = useState(mockMessages)
     const messagesEndRef = useRef(null)
+
+    const {users, selectUser, messagesUser, setMessagesUser} = useContext(ChatContext)
 
      useEffect(()=>{
         messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
-    },[messages])
+    },[users])
 
-    if(!contact){
+    if(!selectUser){
         return(
             <section className="container-initial-chat">
-                <header className="header-chat-panel">
-                <h2>Seleciona un chat</h2>
+                <header className="header-chat-panel header-chat-panel-preview">
+                <h2 className="message-preview-chat">Seleciona un chat</h2>
             </header>
             </section>
         )
@@ -28,17 +29,19 @@ const Chat = ({contact})=>{
     }
 
     const handleClick= ()=>{
-        let i = messages.length + 100
         const currentTime = new Date()
 
         const newMessage = {
-            id: messages.length + 1, author: "me", text: textMessage, time: currentTime.getHours() + ":" + currentTime.getMinutes()
+            id: crypto.randomUUID(),
+            author: "me",
+            text: textMessage,
+            time: currentTime.getHours() + ":" + currentTime.getMinutes()
         }
 
         // console.log(newMessage);
         
-        setMessage([...messages, newMessage])
-        // console.log(messages);
+        setMessagesUser([...messagesUser, newMessage])
+        // console.log(messagesUser);
 
         setTexMessage("")
     }
@@ -53,13 +56,13 @@ const Chat = ({contact})=>{
     return(
         <section className="container-chat">
             <header className="header-chat-panel">
-                <h2>{`${contact.firstName} ${contact.lastName}`}</h2>
-                <p>{`${contact.phone}`} hace 1 minuto</p>
+                <h2>{`${selectUser.firstName} ${selectUser.lastName}`}</h2>
+                <p>{`${selectUser.address.country}`} hace 1 minuto</p>
             </header>
             <div className="chat-body">
                 <p className="dayMesagge">Hoy</p>
                 {
-                    messages.map((message) => (<div key={message.id} className={` message ${message.author === "me" ? "me" : "you"}`}>
+                    messagesUser.map((message) => (<div key={message.id} className={` message ${message.author === "me" ? "me" : "you"}`}>
                         <p className="text-message"><b>{message.author}:</b> {message.text}</p>
                         <p className="time">{message.time}</p>
                     </div>

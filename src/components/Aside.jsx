@@ -1,31 +1,10 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
+import { ChatContext } from "../context/chatContext"
 
-const Aside= ({selectContact})=>{
+const Aside= ()=>{
 
     const [search, setSearch] = useState("")
-    const [contactos, setContactos] = useState([])
-
-    const fecchinContactos = async ()=>{
-        try {
-            const response = await fetch("https://dummyjson.com/users") 
-            
-            if(!response.ok){
-                throw new Error("No se pudo cargar la api")
-            }
-
-            const data = await response.json()
-            // console.log(data.users);
-            setContactos(data.users)
-
-        } catch (e) {
-            console.error(e.message);
-            
-        }
-    } 
-
-    useEffect(()=>{
-        fecchinContactos()
-    },[])
+    const{users, selectUser, handleSelectUser} = useContext(ChatContext)
 
     const handleChange= (e)=>{
         // console.log("modificando input");
@@ -33,7 +12,7 @@ const Aside= ({selectContact})=>{
         
     }
 
-    const filterContacts = contactos.filter((contacto)=> {
+    const filterContacts = users.filter((contacto)=> {
         const fullname = `${contacto.firstName} ${contacto.lastName}`
 
         return(
@@ -54,13 +33,17 @@ const Aside= ({selectContact})=>{
                 }
             {
                 filterContacts.map((contact)=>(
-                    <li key={contact.id} onClick={()=> selectContact(contact)}>
+                    <li key={contact.id} onClick={()=>{ 
+                        // console.log(contact);
+                        handleSelectUser(contact)
+                        }}>
+
                         <div className="container-img-chat">
-                            <img src={contact.image} alt="" />
+                            <img src={contact.avatar} alt="" />
                         </div>
                         <div className="container-descripcion-chat">
                             <h3>{contact.firstName} {contact.lastName}</h3>
-                            <small>{contact.address.state}</small>
+                            <small>{contact.address.country}</small>
                         </div>
                     </li>
                 ))
