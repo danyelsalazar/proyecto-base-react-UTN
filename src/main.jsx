@@ -1,7 +1,7 @@
-import { StrictMode, useState } from 'react'
+import { StrictMode} from 'react'
 import { createRoot } from 'react-dom/client'
 import './styles/index.css'
-import { ChatContext, ChatProvider } from './context/chatContext'
+import { ChatProvider } from './context/chatContext'
 import { RouterApp } from './router/RouterApp'
 
 createRoot(document.getElementById('root')).render(

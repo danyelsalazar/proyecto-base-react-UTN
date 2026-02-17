@@ -25,8 +25,8 @@ const ChatProvider = ( {children} )=>{
 
     const login = (userData) =>{
 
-        const foundUser = mokUsers.find(user => user.email === userData.email)
-        console.log(foundUser);
+        const foundUser = users.find(user => user.email === userData.email)
+        // console.log(foundUser);
 
         if(!foundUser){
             return false

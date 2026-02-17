@@ -22,6 +22,8 @@ const Login = ()=>{
         e.preventDefault()
         setError(null)
 
+        // console.log(users);
+
         const response = login({email, password})
 
         if(!response){
