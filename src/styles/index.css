@@ -63,6 +63,7 @@ ul li{
     transition: border-left .2s;
     border-left: 2px solid transparent;
     border-bottom: 0.5px solid rgb(121, 121, 121);
+    cursor: pointer;
 }
 ul li:hover{
     border-left: 2px solid rgb(121, 121, 121);
@@ -209,4 +210,72 @@ textarea{
     text-decoration: none;
     background-color: rgb(218, 234, 248);
     color: black;
+}
+
+/* formulario de login */
+/* Contenedor centrado */
+.container-form{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card del login */
+.container-form form{
+  background-color: #ffffff;
+  padding: 2rem;
+  width: 100%;
+  max-width: 360px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Título */
+.container-form h2{
+  text-align: center;
+  color: #374151;
+  font-weight: 600;
+  margin-bottom: .5rem;
+}
+
+/* Inputs */
+.container-form input{
+  padding: .8rem .9rem;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+  outline: none;
+  transition: all .2s ease;
+  font-size: .95rem;
+}
+
+.container-form input:focus{
+  border-color: #9ca3af;
+  background-color: #fff;
+  box-shadow: 0 0 0 2px rgba(156,163,175,0.2);
+}
+
+/* Botón */
+.container-form button{
+  margin-top: .5rem;
+  padding: .8rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #6b7280;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+
+.container-form button:hover{
+  background-color: #4b5563;
+}
+
+.container-form button:active{
+  transform: scale(0.98);
 }
