@@ -212,7 +212,8 @@ textarea{
     color: black;
 }
 
-/* formulario de login */
+/* formulario de login----------- */
+
 /* Contenedor centrado */
 .container-form{
   min-height: 100vh;
@@ -278,4 +279,23 @@ textarea{
 
 .container-form button:active{
   transform: scale(0.98);
+}
+
+.error-inicio-sesion{
+    text-align: center;
+    color: rgb(237, 47, 47);
+}
+
+.registrarse{
+    text-align: center;
+    font-size: 15px;
+    color: rgb(53, 181, 244);
+    transition: opacity .2s;
+}
+.registrarse:hover{
+    opacity: .6;
+}
+.Registrado{
+    text-align: center;
+    color: rgb(148, 233, 22);
 }

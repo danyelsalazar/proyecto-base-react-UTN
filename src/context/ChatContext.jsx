@@ -11,6 +11,8 @@ const ChatProvider = ( {children} )=>{
     const [selectUser, setSelectUser] = useState(null) //guardara el usuario selecionado
     const [messagesUser, setMessagesUser] = useState([])
 
+    const[loggedUser, setLoggedUser] = useState(null)
+
     useEffect(()=>{
         if (selectUser) {
             setMessagesUser(selectUser.messages || [])
@@ -20,8 +22,25 @@ const ChatProvider = ( {children} )=>{
     const handleSelectUser = (user)=>{
         setSelectUser(user)
     }
+
+    const login = (userData) =>{
+
+        const foundUser = mokUsers.find(user => user.email === userData.email)
+        console.log(foundUser);
+
+        if(!foundUser){
+            return false
+        }
+
+        if(foundUser.password === userData.password){
+            return true
+        }
+
+        return false
+        
+    }
     return(
-        <ChatContext.Provider  value={{users, selectUser, messagesUser, setSelectUser, setMessagesUser, setUsers,  handleSelectUser}}>
+        <ChatContext.Provider  value={{users, selectUser, messagesUser, login, setSelectUser, setMessagesUser, setUsers,  handleSelectUser}}>
             {children}
         </ChatContext.Provider>
     )
