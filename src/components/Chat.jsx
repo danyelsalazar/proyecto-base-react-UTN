@@ -1,12 +1,11 @@
 import { useState, useRef, useEffect, useContext } from "react"
 import { ChatContext } from "../context/chatContext"
-
 const Chat = ()=>{
 
     const [textMessage, setTexMessage] = useState("")
     const messagesEndRef = useRef(null)
 
-    const {users, selectUser, messagesUser, setMessagesUser, setSelectUser, setUsers} = useContext(ChatContext)
+    const {users, selectUser, messagesUser, setMessagesUser, setUsers} = useContext(ChatContext)
 
      useEffect(()=>{
         messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
@@ -44,14 +43,14 @@ const Chat = ()=>{
         
         setMessagesUser(newMessages)
         // console.log(messagesUser);
-        actualizaruserInUsers(selectUser.id, newMessages)
+        actualizarUserInUsers(selectUser.id, newMessages)
         
         // console.log(users);
 
         setTexMessage("")
     }
 
-    const actualizaruserInUsers = (id, newMessages)=>{
+    const actualizarUserInUsers = (id, newMessages)=>{
         setUsers((prevUsers)=>
             prevUsers.map((user)=> 
                 user.id === id ? {...user, messages:  newMessages} : user
@@ -65,7 +64,6 @@ const Chat = ()=>{
         }
         
     }
-
 
     return(
         <section className="container-chat">

@@ -1,10 +1,12 @@
 import { useContext, useEffect, useState } from "react"
 import { ChatContext } from "../context/chatContext"
+import { Navigate, useNavigate } from "react-router-dom"
 
 const Aside= ()=>{
 
     const [search, setSearch] = useState("")
-    const{users, selectUser, handleSelectUser} = useContext(ChatContext)
+    const{users, handleSelectUser} = useContext(ChatContext)
+    const navigator = useNavigate()
 
     const handleChange= (e)=>{
         // console.log("modificando input");
@@ -20,11 +22,19 @@ const Aside= ()=>{
     })
     // console.log(filterUsers);
     
+     const handleCerrarSesion = ()=>{
+        localStorage.removeItem("user")
+        handleSelectUser(null)
+        navigator("/login")
+    }
 
     return(
         <aside>
             <div className="container-search">
-                <h1>Chat UTN</h1>
+                <div className="header-exit">
+                    <h1>Chat UTN</h1>
+                    <button className="cerrar-sesion" onClick={handleCerrarSesion}><svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24"><path fill="currentColor" stroke="#f7f6f6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 4.001H5v14a2 2 0 0 0 2 2h8m1-5l3-3m0 0l-3-3m3 3H9"/></svg></button>
+                </div>
                 <input type="search" placeholder="Buscar contactos..." onChange={handleChange} className="search"/>
             </div>
             <ul className="container-view-chats">
@@ -49,6 +59,7 @@ const Aside= ()=>{
                 ))
             }
             </ul>
+
         </aside>
     )
 }

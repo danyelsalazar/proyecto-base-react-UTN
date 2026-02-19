@@ -8,7 +8,7 @@ const Login = ()=>{
     const [password, setPassword] = useState("")
     const [error, setError] = useState(null)
 
-    const {login} = useContext(ChatContext)
+    const {login, handleUser} = useContext(ChatContext)
     const navigate = useNavigate();
 
     const handleChange= (e)=>{
@@ -31,6 +31,7 @@ const Login = ()=>{
             return
         }
 
+        handleUser(response)
         navigate("/")
         
     }

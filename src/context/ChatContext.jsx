@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { users as mokUsers} from "../services/api";
 
 //1 creamos un contexto
@@ -11,7 +11,7 @@ const ChatProvider = ( {children} )=>{
     const [selectUser, setSelectUser] = useState(null) //guardara el usuario selecionado
     const [messagesUser, setMessagesUser] = useState([])
 
-    const[loggedUser, setLoggedUser] = useState(null)
+    const[loggedUser, setLoggedUser] = useState(JSON.parse(localStorage.getItem("user") || null)) //guarda usario logueado
 
     useEffect(()=>{
         if (selectUser) {
@@ -19,6 +19,11 @@ const ChatProvider = ( {children} )=>{
         }
     },[selectUser])
     
+    const handleUser = (user)=>{
+        setLoggedUser(user)
+        localStorage.setItem("user", JSON.stringify(user))
+    }
+
     const handleSelectUser = (user)=>{
         setSelectUser(user)
     }
@@ -33,14 +38,14 @@ const ChatProvider = ( {children} )=>{
         }
 
         if(foundUser.password === userData.password){
-            return true
+            return foundUser
         }
 
         return false
         
     }
     return(
-        <ChatContext.Provider  value={{users, selectUser, messagesUser, login, setSelectUser, setMessagesUser, setUsers,  handleSelectUser}}>
+        <ChatContext.Provider  value={{users, selectUser, messagesUser, loggedUser, login, setSelectUser, setMessagesUser, setUsers,  handleSelectUser, handleUser, setLoggedUser}}>
             {children}
         </ChatContext.Provider>
     )
