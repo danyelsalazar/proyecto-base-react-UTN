@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { ChatContext } from "../context/chatContext"
+import { ChatContext } from "../context/ChatContext"
 import { Navigate } from "react-router-dom"
 
 const RouteProtected = ({children})=>{

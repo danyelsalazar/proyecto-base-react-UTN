@@ -1,7 +1,3 @@
-
-
-
-
 const NotFound = ()=>{
     return(
         <section className="not-fund">
