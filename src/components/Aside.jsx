@@ -33,7 +33,7 @@ const Aside= ()=>{
             <div className="container-search">
                 <div className="header-exit">
                     <h1>Chat UTN</h1>
-                    <button className="cerrar-sesion" onClick={handleCerrarSesion}><svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24"><path fill="currentColor" stroke="#f7f6f6" strokelinecap="round" strokelinejoin="round" strokewidth="2" d="M15 4.001H5v14a2 2 0 0 0 2 2h8m1-5l3-3m0 0l-3-3m3 3H9"/></svg></button>
+                    <button className="cerrar-sesion" onClick={handleCerrarSesion}><svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24"><path fill="currentColor" stroke="#f7f6f6" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 4.001H5v14a2 2 0 0 0 2 2h8m1-5l3-3m0 0l-3-3m3 3H9"/></svg></button>
                 </div>
                 <input type="search" placeholder="Buscar contactos..." onChange={handleChange} className="search"/>
             </div>

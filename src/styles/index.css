@@ -241,11 +241,17 @@ textarea{
     gap: 10px;
     align-items: center;
 }
-.not-fund a{
-    padding: 10px;
+.not-fund button{
+    padding: 15px;
     text-decoration: none;
     background-color: rgb(218, 234, 248);
     color: black;
+    border: none;
+    border-radius: 20px;
+    transition: box-shadow .3s;
+}
+.not-fund button:hover{
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.141);
 }
 
 /* formulario de login----------- */
