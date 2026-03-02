@@ -1,6 +1,5 @@
 import { Chat } from '../components/Chat'
 import { Aside } from '../components/Aside'
-import { useState } from 'react'
 
 const App = ()=>{
 

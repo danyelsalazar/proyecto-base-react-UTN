@@ -46,6 +46,7 @@ const Aside= ()=>{
                     <li key={contact.id} onClick={()=>{ 
                         // console.log(contact);
                         handleSelectUser(contact)
+                        navigator(`/chat/${contact.id}`)
                         }}>
 
                         <div className="container-img-chat">

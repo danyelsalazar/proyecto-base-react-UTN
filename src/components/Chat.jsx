@@ -1,13 +1,27 @@
 import { useState, useRef, useEffect, useContext } from "react"
 import { ChatContext } from "../context/ChatContext"
+import { useParams } from "react-router-dom"
+
 const Chat = ()=>{
 
     const [textMessage, setTexMessage] = useState("")
     const messagesEndRef = useRef(null)
 
-    const {users, selectUser, messagesUser, setMessagesUser, setUsers} = useContext(ChatContext)
+    const {users, selectUser, messagesUser, setMessagesUser, setUsers, setSelectUser} = useContext(ChatContext)
 
-     useEffect(()=>{
+    //----------
+    const { id } = useParams()
+
+    const user = users.find((user)=> user.id === Number(id))
+
+    useEffect(()=>{
+        if(user){
+            setSelectUser(user)
+        }
+    },[user])
+    //----------
+
+    useEffect(()=>{
         messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
     },[users])
 

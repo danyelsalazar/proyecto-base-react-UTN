@@ -14,6 +14,7 @@ const RouterApp = ()=>{
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/register" element={<Register/>}/>
                 <Route path="/" element={<RouteProtected><App/></RouteProtected>}/>
+                <Route path="/chat/:id" element={<RouteProtected><App/></RouteProtected>}/>
                 <Route path="*" element={<NotFound/>}/>
             </Routes>
         </BrowserRouter>

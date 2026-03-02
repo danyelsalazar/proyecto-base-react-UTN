@@ -33,7 +33,7 @@ const Register = () =>{
                         { id: crypto.randomUUID(), author: formData.firstName, text: "Hola soy un usuario registrado desde el formulario", time: "09:10" }
                     ]
             }
-            setUsers([...users, newUser])
+            setUsers(prev =>[...prev, newUser])
             
             // RESET: Volvemos al los valores iniociales del; formulario
             setFormData({ firstName: ``, lastName: ``, email: ``, password: ``, confirmPassword: `` }); 
@@ -43,35 +43,20 @@ const Register = () =>{
         }
     }
 
-    const handleChangeEmail = (e)=>{
-        setFormData({...formData, email: e.target.value})
-    }
-
-    const handleChangePassword = (e)=>{
-        setFormData({...formData, password: e.target.value})
-    }
-
-    const handleChangeConfirmPassword = (e)=>{
-        setFormData({...formData, confirmPassword: e.target.value})
-    }
-
-    const handleChangeFirsName = (e)=>{
-        setFormData({...formData, firstName: e.target.value})
-    }
-
-    const handleChangeLastName = (e)=>{
-        setFormData({...formData, lastName: e.target.value})
+     const handleChange = (e)=>{
+        const {name, value} = e.target
+        setFormData({...formData, [name]: value})
     }
 
     return(
         <section className="container-form">
             <form  onSubmit={handleSobmit}>
                 <h2>Registro de Usuario</h2>
-                <input type="text" placeholder="First name" onChange={handleChangeFirsName} value={formData.firstName} required/>
-                <input type="text" placeholder="Last name" onChange={handleChangeLastName} value={formData.lastName} required/>
-                <input type="email" placeholder="Email" onChange={handleChangeEmail} value={formData.email} required/>
-                <input type="password" placeholder="Password" onChange={handleChangePassword} value={formData.password} required />
-                <input type="password" placeholder="Confirm password" onChange={handleChangeConfirmPassword} value={formData.confirmPassword} required/>
+                <input name= "firstName" type="text" placeholder="First name" onChange={handleChange} value={formData.firstName} required/>
+                <input name= "lastName" type="text" placeholder="Last name" onChange={handleChange} value={formData.lastName} required/>
+                <input name= "email" type="email" placeholder="Email" onChange={handleChange} value={formData.email} required/>
+                <input name= "password" type="password" placeholder="Password" onChange={handleChange} value={formData.password} required />
+                <input name= "confirmPassword" type="password" placeholder="Confirm password" onChange={handleChange} value={formData.confirmPassword} required/>
                 <button>Registrarse</button>
                 <p className="registrarse" onClick={()=> navigate("/login")}>Iniciar sesion</p>
                 {
