@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, useContext } from "react"
 import { ChatContext } from "../context/ChatContext"
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 
 const Chat = ({chatOpen})=>{
 
@@ -13,6 +13,8 @@ const Chat = ({chatOpen})=>{
     const { id } = useParams()
 
     const user = users.find((user)=> user.id === id)
+
+    const navigate = useNavigate()
 
     useEffect(()=>{
         if(user){
@@ -82,8 +84,14 @@ const Chat = ({chatOpen})=>{
     return(
         <section className={`container-chat ${chatOpen ? "show-mobile" : ""}`}>
             <header className="header-chat-panel">
-                <h2>{`${selectUser.firstName} ${selectUser.lastName}`}</h2>
-                <p>{`${selectUser.address.country}`} hace 1 minuto</p>
+                <button className="container-return-chat" onClick={()=>navigate("/")}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24"><path fill="#ffffff" d="m7.825 13l4.9 4.9q.3.3.288.7t-.313.7q-.3.275-.7.288t-.7-.288l-6.6-6.6q-.15-.15-.213-.325T4.426 12t.063-.375t.212-.325l6.6-6.6q.275-.275.688-.275t.712.275q.3.3.3.713t-.3.712L7.825 11H19q.425 0 .713.288T20 12t-.288.713T19 13z"/></svg>
+                </button>
+                <img src={`${selectUser.avatar}`} alt="" className="img-chat-open"/>
+                <div className="container-info-header">
+                    <h2>{`${selectUser.firstName} ${selectUser.lastName}`}</h2>
+                    <p>{`${selectUser.address.country}`} hace 1 minuto</p>
+                </div>
             </header>
             <div className="chat-body">
                 <p className="dayMesagge">Hoy</p>

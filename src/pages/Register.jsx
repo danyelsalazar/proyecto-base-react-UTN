@@ -45,7 +45,7 @@ const Register = () =>{
                     address: { country: "VE" },
                     email: formData.email,
                     password: formData.password,
-                    avatar: "https://media.licdn.com/dms/image/v2/D4D03AQFGlcLiV1xaDg/profile-displayphoto-scale_400_400/B4DZvJ55pmJoAg-/0/1768618958697?e=1772668800&v=beta&t=sKFzZ4fLEjzUCsd7oTePMKEkHh5nM58Fk_1F2Gnw6rA",
+                    avatar: "https://media.licdn.com/dms/image/v2/D4D03AQFGlcLiV1xaDg/profile-displayphoto-crop_800_800/B4DZvJ55pmJoAI-/0/1768618958605?e=1774483200&v=beta&t=_gPYXWbsaogUwdvPh62UIuN72p2rqDZ5ab208lmymfg",
                     online: false,
                     lastMessage: "Hola soy un usuario registrado desde el formulario",
                     lastTime: "09:13",
