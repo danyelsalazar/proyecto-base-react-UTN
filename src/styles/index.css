@@ -88,7 +88,6 @@ ul li:hover{
     height: 60px;
     border-radius: 50%;
     padding: 5px;
-    /* background-color: rgb(15, 210, 18); */
     overflow: hidden;
 }
 .container-img-chat img{
@@ -255,6 +254,46 @@ textarea{
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.141);
 }
 
+/* responsive chat app */
+
+@media(max-width:550px){
+
+    .app{
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        border-radius: 0px;
+    }
+
+    aside{
+        width:100%;
+        height: 100%;
+    }
+
+    .container-initial-chat{
+        display: none;
+    }
+
+    /* ocultar chat por defecto */
+    .container-chat{
+        display:none;
+    }
+
+    /* cuando hay chat seleccionado */
+    .container-chat.show-mobile{
+        display:grid;
+        height: 100%;
+        width: 100%;
+    }
+
+    /* ocultar aside cuando hay chat */
+    .aside.hide-mobile{
+        display:none;
+    }
+
+}
+
+
 /* formulario de login----------- */
 
 /* Contenedor centrado */
@@ -328,19 +367,45 @@ textarea{
     text-align: center;
     color: rgb(237, 47, 47);
 }
+.container-registro-acerca{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
 
 .registrarse{
-    text-align: center;
     font-size: 15px;
+    width: max-content;
     color: rgb(53, 181, 244);
     transition: opacity .2s;
+    cursor: pointer;
 }
 .registrarse:hover{
     opacity: .6;
 }
+.acerca-de{
+    color: #9ca3af;
+}
 .Registrado{
     text-align: center;
     color: rgb(148, 233, 22);
+}
+/* responsive login */
+@media(max-width:600px){
+    .container-form{
+        min-height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+    .container-form form{
+        padding: 2rem;
+        width: 85%;
+    }   
 }
 
 /* configuracion aside */
@@ -355,4 +420,125 @@ textarea{
     width: 100%;
     height: 100%;
     background: #4c515a;
+}
+
+.container-acerca-de{
+    display: flex;
+    flex-direction: column;
+}
+
+/* area de about */
+
+.container-about{
+    width: 100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:15px;
+}
+
+
+.about-card{
+    width:90%;
+    height: max-content;
+    background:#ffffff;
+    border-radius:18px;
+    padding:40px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+.about-header{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.about-header h1{
+    font-size:36px;
+    color:#3f4650;
+    margin-bottom:10px;
+}
+
+.about-header p{
+    color:#6b6f76;
+    font-size:16px;
+}
+
+
+.about-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.about-box{
+    background:#ebeced;
+    border-radius:14px;
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+    transition:all .3s ease;
+}
+
+.about-box:hover{
+    box-shadow:0 20px 40px rgba(0,0,0,0.08);
+    transform:translateY(-2px);
+}
+
+.about-box h3{
+    margin-bottom:12px;
+    font-size:18px;
+    color:#494848f5;
+}
+
+
+.about-box li{
+    margin-bottom:6px;
+    color:#7c7979;
+    border: none;
+    transition: color .3s;
+}
+
+.about-box li:hover{
+    border-left: none;
+    background-color: transparent;
+    color: rgba(73, 72, 72, 0.324)
+}
+
+.about-box p{
+    color:#7c7979;
+    line-height:1.5;
+}
+
+
+.about-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top:35px;
+    font-size:14px;
+    color:#777;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:600px){
+
+    .container-about{
+        height: 100dvh;
+        width: 100dvw;
+        
+    }
+    .about-card{
+        width: 95%;
+        height: 95%;
+        overflow-y: scroll
+    }
+
+    .about-header h1{
+        font-size:28px;
+    }
+
 }

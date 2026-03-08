@@ -48,8 +48,11 @@ const Login = ()=>{
                 <input type="email" placeholder="Email" onChange={handleChange} required/>
                 <input type="password" placeholder="Password" onChange={handleChangePassword} required/>
                 <button>Ingresar</button>
-                <p className="registrarse" onClick={()=> navigate("/register")}>Registrarse</p>
-                {error && <p className="error-inicio-sesion">error al ingresar</p>}
+                <div className="container-registro-acerca">
+                    <p className="registrarse" onClick={()=> navigate("/register")}>Registrarse</p>
+                    <p className="registrarse acerca-de" onClick={()=> navigate("/acercade")}>Acerca de</p>
+                    {error && <p className="error-inicio-sesion">error al ingresar</p>}
+                </div>
             </form>
         </section>
     )

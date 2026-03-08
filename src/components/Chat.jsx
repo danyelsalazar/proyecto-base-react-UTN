@@ -2,7 +2,7 @@ import { useState, useRef, useEffect, useContext } from "react"
 import { ChatContext } from "../context/ChatContext"
 import { useParams } from "react-router-dom"
 
-const Chat = ()=>{
+const Chat = ({chatOpen})=>{
 
     const [textMessage, setTexMessage] = useState("")
     const messagesEndRef = useRef(null)
@@ -12,7 +12,7 @@ const Chat = ()=>{
     //----------
     const { id } = useParams()
 
-    const user = users.find((user)=> user.id === Number(id))
+    const user = users.find((user)=> user.id === id)
 
     useEffect(()=>{
         if(user){
@@ -80,7 +80,7 @@ const Chat = ()=>{
     }
 
     return(
-        <section className="container-chat">
+        <section className={`container-chat ${chatOpen ? "show-mobile" : ""}`}>
             <header className="header-chat-panel">
                 <h2>{`${selectUser.firstName} ${selectUser.lastName}`}</h2>
                 <p>{`${selectUser.address.country}`} hace 1 minuto</p>

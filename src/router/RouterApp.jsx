@@ -6,11 +6,13 @@ import { NotFound } from "../pages/NotFound"
 import { Login } from "../pages/Login"
 import {Register} from "../pages/Register"
 import { RouteProtected } from "../components/RouteProtected"
+import { About } from "../pages/About"
 
 const RouterApp = ()=>{
     return (
         <BrowserRouter>
             <Routes>
+                <Route path="/acercade" element={<About/>}/>
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/register" element={<Register/>}/>
                 <Route path="/" element={<RouteProtected><App/></RouteProtected>}/>

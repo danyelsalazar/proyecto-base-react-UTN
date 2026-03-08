@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react"
 import { ChatContext } from "../context/ChatContext"
-import { Navigate, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
-const Aside= ()=>{
+const Aside= ({chatOpen})=>{
 
     const [search, setSearch] = useState("")
     const{users, handleSelectUser} = useContext(ChatContext)
@@ -29,7 +29,7 @@ const Aside= ()=>{
     }
 
     return(
-        <aside>
+        <aside className={chatOpen ? "aside hide-mobile" : "aside"}>
             <div className="container-search">
                 <div className="header-exit">
                     <h1>Chat UTN</h1>

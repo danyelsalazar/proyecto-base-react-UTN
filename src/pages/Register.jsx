@@ -162,7 +162,9 @@ const Register = () =>{
                     errors.confirmPassword && <p>{errors.confirmPassword}</p>
                 }
                 <button>Registrarse</button>
-                <p className="registrarse" onClick={()=> navigate("/login")}>Iniciar sesion</p>
+                <div className="container-registro-acerca">
+                    <p className="registrarse" onClick={()=> navigate("/login")}>Iniciar sesion</p>
+                </div>
                 {
                     error && <p>Error al llenar el formulario</p>
                 }
