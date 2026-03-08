@@ -407,6 +407,8 @@ textarea{
     gap: 10px;
 }
 
+/* registrarse */
+
 .registrarse{
     font-size: 15px;
     width: max-content;
@@ -423,6 +425,10 @@ textarea{
 .Registrado{
     text-align: center;
     color: rgb(148, 233, 22);
+}
+.error{
+    color: red;
+    font-size: 14px;
 }
 /* responsive login */
 @media(max-width:600px){

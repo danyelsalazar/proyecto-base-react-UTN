@@ -141,32 +141,32 @@ const Register = () =>{
                 <h2>Registro de Usuario</h2>
                 <input name= "firstName" type="text" placeholder="First name" onChange={handleChange} value={formData.firstName} required/>
                 {
-                    errors.firstName && <p>{errors.firstName}</p>
+                    errors.firstName && <p className="error">{errors.firstName}</p>
                 }
                 
                 <input name= "lastName" type="text" placeholder="Last name" onChange={handleChange} value={formData.lastName} required/>
                 {
-                    errors.lastName && <p>{errors.lastName}</p>
+                    errors.lastName && <p className="error">{errors.lastName}</p>
                 }
 
                 <input name= "email" type="email" placeholder="Email" onChange={handleChange} value={formData.email} required/>
                 {
-                    errors.email && <p>{errors.email}</p>
+                    errors.email && <p className="error">{errors.email}</p>
                 }
                 <input name= "password" type="password" placeholder="Password" onChange={handleChange} value={formData.password} required />
                 {
-                    errors.password && <p>{errors.password}</p>
+                    errors.password && <p className="error">{errors.password}</p>
                 }
                 <input name= "confirmPassword" type="password" placeholder="Confirm password" onChange={handleChange} value={formData.confirmPassword} required/>
                 {
-                    errors.confirmPassword && <p>{errors.confirmPassword}</p>
+                    errors.confirmPassword && <p className="error">{errors.confirmPassword}</p>
                 }
                 <button>Registrarse</button>
                 <div className="container-registro-acerca">
                     <p className="registrarse" onClick={()=> navigate("/login")}>Iniciar sesion</p>
                 </div>
                 {
-                    error && <p>Error al llenar el formulario</p>
+                    error && <p className="error">Error al llenar el formulario</p>
                 }
             </form>
         </section>

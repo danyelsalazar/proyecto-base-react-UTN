@@ -57,7 +57,7 @@ const About = () => {
 
                 <footer className="about-footer">
                     <p>Proyecto desarrollado por Danyel Salazar</p>
-                    <p className="registrarse" onClick={()=> navigate("/login")}>Inicicar sesion</p>
+                    <p className="registrarse" onClick={()=> navigate("/login")}>Iniciar sesion</p>
                 </footer>
 
             </div>
