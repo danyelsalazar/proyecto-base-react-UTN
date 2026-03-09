@@ -49,8 +49,8 @@ const Login = ()=>{
                 <input type="password" placeholder="Password" onChange={handleChangePassword} required/>
                 <button>Ingresar</button>
                 <div className="container-registro-acerca">
-                    <p className="registrarse" onClick={()=> navigate("/register")}>Registrarse</p>
-                    <p className="registrarse acerca-de" onClick={()=> navigate("/acercade")}>Acerca de</p>
+                    <p className="registrarse" onClick={()=> navigate("/registro")}>Registrarse</p>
+                    <p className="registrarse acerca-de" onClick={()=> navigate("/acerca")}>Acerca de</p>
                     {error && <p className="error-inicio-sesion">error al ingresar</p>}
                 </div>
             </form>

@@ -12,9 +12,9 @@ const RouterApp = ()=>{
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/acercade" element={<About/>}/>
+                <Route path="/acerca" element={<About/>}/>
                 <Route path="/login" element={<Login/>}/>
-                <Route path="/register" element={<Register/>}/>
+                <Route path="/registro" element={<Register/>}/>
                 <Route path="/" element={<RouteProtected><App/></RouteProtected>}/>
                 <Route path="/chat/:id" element={<RouteProtected><App/></RouteProtected>}/>
                 <Route path="*" element={<NotFound/>}/>

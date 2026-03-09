@@ -6,7 +6,7 @@ const NotFound = ()=>{
     return(
         <section className="not-fund">
             <h1>404 the page not found</h1>
-            <button className="volver-home" onClick={()=> navigate("/login")}>go the home</button>
+            <button className="volver-home" onClick={()=> navigate("/login")}>Volver a login</button>
         </section>
     )
 }
