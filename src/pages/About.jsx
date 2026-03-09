@@ -60,7 +60,7 @@ const About = () => {
                     <div className="about-box">
                         <h3>Observaciones personales</h3>
                         <p>
-                            El desarrollo de este proyecto permitió aplicar de forma práctica los conceptos aprendidos durante la cursada, especialmente en la creación de componentes reutilizables, manejo del estado y navegación dentro de una aplicación React.
+                            El desarrollo de este proyecto me permitió aplicar de forma práctica los conceptos aprendidos durante la cursada, especialmente en la creación de componentes reutilizables, manejo del estado y navegación dentro de una aplicación React.
                         </p>
                     </div>
 
