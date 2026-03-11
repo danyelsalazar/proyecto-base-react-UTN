@@ -31,8 +31,8 @@ const Chat = ({chatOpen})=>{
         return(
             <section className="container-initial-chat">
                 <header className="header-chat-panel header-chat-panel-preview">
-                <h2 className="message-preview-chat">Seleciona un chat</h2>
-            </header>
+                    <h2 className="message-preview-chat">Seleciona un chat</h2>
+                </header>
             </section>
         )
     }
