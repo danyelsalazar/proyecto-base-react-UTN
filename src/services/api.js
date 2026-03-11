@@ -14,7 +14,8 @@ const users = [
       { id: "msg-1-1", author: "Leanne", text: "Hola! Cómo estás?", time: "09:10" },
       { id: "msg-1-2", author: "me", text: "Todo bien, trabajando en la app de mensajería", time: "09:12" },
       { id: "msg-1-3", author: "Leanne", text: "Genial, después probamos el scroll del chat", time: "09:13" }
-    ]
+    ],
+    logged: false
   },
   {
     id: 2,
@@ -31,7 +32,8 @@ const users = [
       { id: "msg-2-1", author: "Ervin", text: "Tenés el diseño del chat listo?", time: "10:01" },
       { id: "msg-2-2", author: "me", text: "Sí, estoy maquetando la parte de mensajes", time: "10:03" },
       { id: "msg-2-3", author: "Ervin", text: "Perfecto, avisame cuando esté listo", time: "10:04" }
-    ]
+    ],
+    logged: false
   },
   {
     id: 3,
@@ -47,7 +49,8 @@ const users = [
     messages: [
       { id: "msg-3-1", author: "Clementine", text: "Probaste la API de mensajes?", time: "11:20" },
       { id: "msg-3-2", author: "me", text: "Sí, funciona bien y responde rápido", time: "11:22" }
-    ]
+    ],
+    logged: false
   },
   {
     id: 4,
@@ -63,7 +66,8 @@ const users = [
     messages: [
       { id: "msg-4-1", author: "Patricia", text: "Estoy en reunión ahora", time: "12:00" },
       { id: "msg-4-2", author: "me", text: "Dale, después seguimos con esto", time: "12:01" }
-    ]
+    ],
+    logged: false
   },
   {
     id: 5,
@@ -79,7 +83,8 @@ const users = [
     messages: [
       { id: "msg-5-1", author: "Chelsey", text: "Viste el bug en los mensajes?", time: "13:15" },
       { id: "msg-5-2", author: "me", text: "Sí, lo arreglo ahora", time: "13:16" }
-    ]
+    ],
+    logged: false
   },
   {
     id: 6,
@@ -95,7 +100,8 @@ const users = [
     messages: [
       { id: "msg-6-1", author: "Dennis", text: "Subiste el repositorio?", time: "14:40" },
       { id: "msg-6-2", author: "me", text: "Recién lo subo al repo", time: "14:41" }
-    ]
+    ],
+    logged: false
   },
   {
     id: 7,
@@ -111,7 +117,8 @@ const users = [
     messages: [
       { id: "msg-7-1", author: "Kurtis", text: "Che probamos el chat en vivo?", time: "15:05" },
       { id: "msg-7-2", author: "me", text: "Dale probemos mandar audios después", time: "15:06" }
-    ]
+    ],
+    logged: false
   },
   {
     id: 8,
@@ -127,7 +134,8 @@ const users = [
     messages: [
       { id: "msg-8-1", author: "Nicholas", text: "Funciona el scroll automático?", time: "16:10" },
       { id: "msg-8-2", author: "me", text: "Sí, con scrollIntoView anda perfecto", time: "16:11" }
-    ]
+    ],
+    logged: false
   },
   {
     id: 9,
@@ -143,7 +151,8 @@ const users = [
     messages: [
       { id: "msg-9-1", author: "Glenna", text: "Agregaste manejo de estados?", time: "17:22" },
       { id: "msg-9-2", author: "me", text: "Sí, usando useState", time: "17:23" }
-    ]
+    ],
+    logged: false
   },
   {
     id: 10,
@@ -159,7 +168,8 @@ const users = [
     messages: [
       { id: "msg-10-1", author: "Clementina", text: "Lo vemos mañana con más tiempo", time: "18:00" },
       { id: "msg-10-2", author: "me", text: "Dale, mañana seguimos con la lógica", time: "18:01" }
-    ]
+    ],
+    logged: false
   }
 ]
 

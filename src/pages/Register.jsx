@@ -1,6 +1,7 @@
 import { useContext, useState } from "react"
 import { useNavigate } from "react-router-dom";
 import { ChatContext } from "../context/ChatContext";
+import imgPerfilDefault from '../assets/contactnew_104150.png'
 
 //para validar email usare este patron :
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -45,13 +46,14 @@ const Register = () =>{
                     address: { country: "VE" },
                     email: formData.email,
                     password: formData.password,
-                    avatar: "https://media.licdn.com/dms/image/v2/D4D03AQFGlcLiV1xaDg/profile-displayphoto-crop_800_800/B4DZvJ55pmJoAI-/0/1768618958605?e=1774483200&v=beta&t=_gPYXWbsaogUwdvPh62UIuN72p2rqDZ5ab208lmymfg",
+                    avatar: imgPerfilDefault,
                     online: false,
                     lastMessage: "Hola soy un usuario registrado desde el formulario",
                     lastTime: "09:13",
                     messages: [
                         { id: crypto.randomUUID(), author: formData.firstName, text: "Hola soy un usuario registrado desde el formulario", time: "09:10" }
-                    ]
+                    ],
+                    logged: true
                 }
            
                 setUsers(prev =>[...prev, newUser])

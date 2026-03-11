@@ -10,7 +10,7 @@ const Settings = ({setOpenSettings})=>{
 
     // quede aqui es una idea que tengo meter todo aqui en un objeto mejort y no en varios estados separados
     const [newInfo, setNewInfo] = useState({
-        firstname: loggedUser.firstName,
+        firstName: loggedUser.firstName,
         lastName: loggedUser.lastName,
         avatar: loggedUser.avatar
     })
@@ -63,20 +63,21 @@ const Settings = ({setOpenSettings})=>{
 
                 <img src={avatar} className="settings-avatar"/>
 
-                <input type="file" onChange={handleImage}/>
+                <input className="input-img" type="file" onChange={handleImage}/>
 
                 <input
                     type="text"
-                    value={name}
-                    onChange={(e)=>setNewInfo(prev =>({
+                    value={newInfo.firstName}
+                    onChange={(e)=>setNewInfo(prev=>({
                         ...prev,
                         firstName: e.target.value
                     }))}
+
                     placeholder="Nombre"
                 />
                 <input
                     type="text"
-                    value={name}
+                    value={newInfo.lastName}
                     onChange={(e)=>setNewInfo(prev=>({
                         ...prev,
                         lastName: e.target.value
@@ -86,11 +87,11 @@ const Settings = ({setOpenSettings})=>{
 
                 <div className="settings-buttons">
 
-                    <button onClick={()=>setOpenSettings(false)}>
+                    <button className="btn-udtate-settings" onClick={()=>setOpenSettings(false)}>
                         Cancelar
                     </button>
 
-                    <button onClick={handleSave}>
+                    <button className="btn-udtate-settings"  onClick={handleSave}>
                         Guardar
                     </button>
 

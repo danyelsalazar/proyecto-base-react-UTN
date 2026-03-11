@@ -1,16 +1,131 @@
-# React + Vite
+# Chat UTN – Aplicación de Mensajería con React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descripción del proyecto
 
-Currently, two official plugins are available:
+Chat UTN es una aplicación web de mensajería desarrollada con **React** como trabajo práctico final del módulo de **Desarrollo Web Frontend**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+La aplicación simula el funcionamiento básico de plataformas de chat modernas, permitiendo visualizar contactos, abrir conversaciones y enviar mensajes dentro de una interfaz interactiva.
 
-## React Compiler
+El objetivo del proyecto fue aplicar conceptos fundamentales del desarrollo frontend como la **creación de componentes, manejo de estado global, navegación entre rutas y validación de formularios**.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+# Funcionalidades principales
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* Registro de nuevos usuarios con validación de datos.
+* Inicio de sesión de usuarios.
+* Visualización de lista de contactos.
+* Búsqueda de contactos por nombre o apellido.
+* Apertura de conversaciones mediante rutas dinámicas.
+* Envío de mensajes dentro del chat.
+* Scroll automático al último mensaje.
+* Visualización del perfil del usuario mediante un modal.
+* Panel de ajustes para modificar nombre y foto de perfil.
+* Persistencia de sesión utilizando **LocalStorage**.
+* Diseño **responsive**, adaptado para escritorio y dispositivos móviles.
+
+---
+
+# Tecnologías utilizadas
+
+* React
+* React Router DOM
+* Context API
+* JavaScript (ES6+)
+* HTML5
+* CSS3
+* LocalStorage
+
+---
+
+# Arquitectura del proyecto
+
+La aplicación está organizada utilizando **componentes reutilizables** y un **Context global** para compartir información entre ellos.
+
+## Componentes principales
+
+* **Aside**
+  Muestra la lista de contactos disponibles y permite buscar usuarios.
+
+* **Chat**
+  Muestra la conversación del contacto seleccionado y permite enviar mensajes.
+
+* **Login**
+  Formulario de inicio de sesión.
+
+* **Register**
+  Formulario de registro con validaciones de datos.
+
+* **RouteProtected**
+  Protege las rutas de la aplicación evitando el acceso si el usuario no está autenticado.
+
+* **Settings / Profile Modal**
+  Permiten visualizar y modificar información del perfil del usuario.
+
+---
+
+# Decisiones de desarrollo
+
+Durante el desarrollo se tomaron algunas decisiones importantes:
+
+* Se utilizó **Context API** para gestionar el estado global de usuarios, mensajes y sesión activa.
+* Se implementaron **rutas dinámicas con React Router** para representar cada conversación mediante una URL única.
+* Se utilizó **LocalStorage** para mantener la sesión del usuario incluso después de recargar la página.
+* El diseño se desarrolló siguiendo un enfoque **minimalista y responsive**, inspirado en aplicaciones de mensajería actuales.
+
+---
+
+# Instalación y ejecución
+
+1. Clonar el repositorio
+
+```
+git clone https://github.com/tu-usuario/chat-utn.git
+```
+
+2. Entrar en la carpeta del proyecto
+
+```
+cd chat-utn
+```
+
+3. Instalar dependencias
+
+```
+npm install
+```
+
+4. Ejecutar la aplicación
+
+```
+npm run dev
+```
+
+La aplicación se abrirá en:
+
+```
+http://localhost:5173
+```
+
+---
+
+# Observaciones personales
+
+Este proyecto permitió aplicar de forma práctica los conceptos aprendidos durante la cursada, especialmente el manejo de **estado global con Context**, la creación de **componentes reutilizables** y la implementación de **rutas dinámicas con React Router**.
+
+---
+
+# Posibles mejoras futuras
+
+* Integrar un backend para persistir usuarios y mensajes.
+* Implementar autenticación real con tokens.
+* Agregar notificaciones de mensajes nuevos.
+* Soporte para envío de imágenes o archivos.
+* Indicadores de usuario en línea.
+
+---
+
+# Autor
+
+Desarrollado por **Dany Gasia**
+Diplomatura en Desarrollo Web Frontend

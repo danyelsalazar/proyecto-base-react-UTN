@@ -617,6 +617,9 @@ textarea{
     gap:15px;
     width:300px;
 }
+.settings-card h2{
+    text-align: center;
+}
 
 .settings-avatar{
     width:100px;
@@ -630,9 +633,47 @@ textarea{
     padding:10px;
     border-radius:8px;
     border:1px solid #ccc;
+    outline: none;
+}
+.input-img::file-selector-button{
+    border-radius: 20px;
+    border: solid .6px #374151;
+    padding: 5px;
+    cursor: pointer;
+    transition: opacity .3s ease; ;
+}
+
+.input-img::file-selector-button:hover{
+    opacity: .5;
 }
 
 .settings-buttons{
     display:flex;
     justify-content:space-between;
+}
+
+.btn-udtate-settings{
+    padding: 10px;
+    border: none;
+    background-color:#666d79;
+    color: white;
+    border-radius: 20px;
+    transition: background-color .3s ease;
+}
+
+.btn-udtate-settings:hover{
+    background-color: #666d7998;
+}
+.info-profile-text b{
+    color: #666d79;
+    font-weight: 100;
+}
+.btn-udtate-settings{
+    margin: auto;
+}
+.img-profile-info{
+    transition: opacity .3s ease;
+}
+.img-profile-info:hover{
+    opacity: .7;
 }
