@@ -80,7 +80,7 @@ Durante el desarrollo se tomaron algunas decisiones importantes:
 1. Clonar el repositorio
 
 ```
-git clone git@github.com:danyelsalazar/proyecto-base-react-UTN.git
+git clone https://github.com/danyelsalazar/proyecto-base-react-UTN.git
 ```
 
 2. Entrar en la carpeta del proyecto
