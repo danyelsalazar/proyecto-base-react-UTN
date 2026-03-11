@@ -7,7 +7,13 @@ const ChatContext = createContext()
 //2 proveemos el contexto
 const ChatProvider = ( {children} )=>{
 
-    const [users, setUsers] = useState(mokUsers)//guardara toda la info de todos los contactos
+    // const [users, setUsers] = useState(mokUsers)//guardara toda la info de todos los contactos
+    
+    const [users, setUsers] = useState(()=>{
+    const savedUsers = localStorage.getItem("users")
+    return savedUsers ? JSON.parse(savedUsers) : mokUsers
+})
+
     const [selectUser, setSelectUser] = useState(null) //guardara el usuario selecionado
     const [messagesUser, setMessagesUser] = useState([])
 
@@ -44,6 +50,10 @@ const ChatProvider = ( {children} )=>{
         return false
         
     }
+    useEffect(()=>{
+         localStorage.setItem("users", JSON.stringify(users))
+    },[users])
+
     return(
         <ChatContext.Provider  value={{users, selectUser, messagesUser, loggedUser, login, setSelectUser, setMessagesUser, setUsers,  handleSelectUser, handleUser, setLoggedUser}}>
             {children}
